@@ -1,0 +1,34 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 First Bash Script Explanation: check_user.sh\
+\
+#!/bin/bash\
+- The shebang line indicates that the script should be run using the Bash shell.\
+\
+-z "$1"\
+- Checks if the first argument ($1) is empty. If so, the echo statements are executed, and the script ends.\
+\
+$1\
+- Represents the first command-line argument passed to the script, similar to parameters in other programming languages.\
+\
+exit 1\
+- Terminates the script with an exit status of 1, indicating an error due to a missing argument.\
+\
+USER_TO_CHECK="$1"\
+- Assigns the first argument passed to the script to the variable USER_TO_CHECK, which holds the username to check.\
+\
+grep -q "^$USER_TO_CHECK:" /etc/passwd\
+- Uses grep to search for the username in the /etc/passwd file.\
+- -q runs grep in quiet mode, returning 0 if the username is found, 1 if not.\
+- "^$USER_TO_CHECK:" searches for lines starting with the username followed by a colon.\
+\
+if ...; then ... else ... fi\
+- If, then, else, statement.\
+\
+fi\
+- Marks the end of the if statement.}
